@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Financial Portfolio</title>
+    <style>
+        /* CSS: This controls the look and feel */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #27ae60;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Header Section */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin-top: 10px; font-size: 1.2rem; opacity: 0.9; }
+
+        /* Navigation */
+        nav {
+            background: #34495e;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover { color: var(--accent-color); }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        /* Sections */
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        h2 { color: var(--primary-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; }
+
+        /* Blog Section Styling */
+        .blog-post {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .blog-post:last-child { border-bottom: none; }
+        .blog-date { color: #888; font-size: 0.9rem; margin-bottom: 5px; display: block;}
+        .blog-title { font-size: 1.5rem; color: var(--primary-color); margin: 0 0 10px 0; }
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: white;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>[Your Name]</h1>
+        <p>Financial Analyst & Researcher</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#blog">Financial Findings (Blog)</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome. I am an aspiring financial analyst passionate about market trends, data analysis, and economic forecasting. This website documents my journey and findings.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <ul>
+                <li><strong>Market Volatility Analysis (2024):</strong> Analyzed S&P 500 trends using Python.</li>
+                <li><strong>Q3 Earnings Report Review:</strong> A deep dive into the tech sector's performance.</li>
+            </ul>
+        </section>
+
+        <section id="blog">
+            <h2>Financial Findings & Blog</h2>
+            
+            <article class="blog-post">
+                <span class="blog-date">Oct 24, 2025</span>
+                <h3 class="blog-title">Why the Bond Market is shifting</h3>
+                <p>In this post, I explore the recent yield curve inversion and what it historically signals for the upcoming fiscal quarter...</p>
+                <a href="#" class="read-more">Read Full Analysis &rarr;</a>
+            </article>
+
+            <article class="blog-post">
+                <span class="blog-date">Sept 10, 2025</span>
+                <h3 class="blog-title">Understanding ETF Liquidity</h3>
+                <p>Liquidity in Exchange Traded Funds is often misunderstood. Here is a breakdown of the primary vs secondary market...</p>
+                <a href="#" class="read-more">Read Full Analysis &rarr;</a>
+            </article>
+
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to reach out to me for collaboration or questions.</p>
+            <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
