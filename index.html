@@ -3,222 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Insights | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Financial Insights | Zitao Guan</title>
     <style>
-        /* CSS RESET & VARIABLES */
-        :root {
-            --primary: #1e3a52; /* Deep Navy Blue */
-            --secondary: #f4f4f4; /* Light Grey Background */
-            --accent: #d4a373; /* Gold/Tan Accent */
-            --text-dark: #333;
-            --white: #ffffff;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #f9f9f9; }
+        header { text-align: center; border-bottom: 2px solid #2c3e50; padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: #2c3e50; margin: 0; }
+        .subtitle { color: #7f8c8d; font-style: italic; }
         
-        body {
-            font-family: 'Raleway', sans-serif;
-            background-color: var(--secondary);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* NAVIGATION - Clean Top Bar */
-        nav {
-            background: var(--white);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            margin-left: 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover { color: var(--accent); }
-
-        /* HERO SECTION - Big & Bold */
-        .hero {
-            background-color: var(--primary);
-            color: var(--white);
-            text-align: center;
-            padding: 80px 20px;
-        }
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
-        /* MAIN LAYOUT */
-        .container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 2fr 1fr; /* Blog takes 2/3, Sidebar 1/3 */
-            gap: 40px;
-        }
-
-        /* BLOG GRID */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-        .post-card {
-            background: var(--white);
-            border: 1px solid #e0e0e0;
-            transition: transform 0.3s ease;
-        }
-        .post-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        
-        /* Placeholder for Image - You can add real <img> tags later */
-        .post-image {
-            background-color: #ddd;
-            height: 250px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            font-size: 0.9rem;
-        }
-        
-        .post-content { padding: 30px; }
-        .post-date { color: var(--accent); font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; display: block; }
-        .post-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px; color: var(--primary); }
-        .post-excerpt { margin-bottom: 20px; font-size: 0.95rem; color: #555; }
-        .read-btn {
-            text-decoration: none;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-            padding: 10px 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-        .read-btn:hover { background: var(--primary); color: var(--white); }
-
-        /* SIDEBAR (About & Subscribe) */
-        .sidebar-widget {
-            background: var(--white);
-            padding: 30px;
-            border: 1px solid #e0e0e0;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .widget-title { font-family: 'Playfair Display', serif; margin-bottom: 20px; color: var(--primary); }
-        .about-text { font-size: 0.9rem; color: #666; margin-bottom: 20px; }
-        .subscribe-input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-        }
-        .subscribe-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            width: 100%;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        /* MOBILE RESPONSIVENESS */
-        @media (max-width: 768px) {
-            .container { grid-template-columns: 1fr; } /* Stack sidebar below blog on phone */
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simplified nav for mobile */
-        }
+        /* Blog List Styles */
+        .blog-entry { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .date { color: #27ae60; font-weight: bold; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+        .blog-title { margin: 10px 0; font-size: 1.5em; }
+        .blog-title a { text-decoration: none; color: #2c3e50; }
+        .blog-title a:hover { color: #2980b9; }
+        .summary { color: #555; }
+        .read-btn { display: inline-block; margin-top: 10px; text-decoration: none; color: #2980b9; font-weight: bold; border: 1px solid #2980b9; padding: 5px 10px; border-radius: 4px; transition: 0.3s; }
+        .read-btn:hover { background: #2980b9; color: white; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="logo">[Your Name] Finance</a>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Blog</a>
-            <a href="#">Contact</a>
-        </div>
-    </nav>
+    <header>
+        <h1>My Financial Findings</h1>
+        <p class="subtitle">Market Analysis & Economic Forecasting by [Your Name]</p>
+    </header>
 
-    <div class="hero">
-        <h1>Financial Clarity</h1>
-        <p>Decoding market trends and economic shifts for the modern investor.</p>
+    <div class="blog-entry">
+        <span class="date">December 16, 2025</span>
+        <h2 class="blog-title"><a href="article1.html">The Shift in Bond Market Yields</a></h2>
+        <p class="summary">An analysis of why the yield curve is inverting and what it means for Q1 2026 portfolios.</p>
+        <a href="article1.html" class="read-btn">Read Full Article &rarr;</a>
     </div>
 
-    <div class="container">
-        
-        <div class="blog-grid">
-            
-            <article class="post-card">
-                <div class="post-image">Image Placeholder (Add your chart image here)</div>
-                <div class="post-content">
-                    <span class="post-date">OCTOBER 24, 2025</span>
-                    <h2 class="post-title">The Bond Market Inversion</h2>
-                    <p class="post-excerpt">Why the current yield curve is signaling a shift in the fiscal landscape and what it means for defensive portfolios.</p>
-                    <a href="article1.html" class="read-btn">Read More</a>
-                </div>
-            </article>
-
-            <article class="post-card">
-                <div class="post-image">Image Placeholder (Add your chart image here)</div>
-                <div class="post-content">
-                    <span class="post-date">SEPTEMBER 15, 2025</span>
-                    <h2 class="post-title">Tech Sector Analysis: Q3</h2>
-                    <p class="post-excerpt">A deep dive into semiconductor volatility and the emerging value plays in the mid-cap technology space.</p>
-                    <a href="#" class="read-btn">Read More</a>
-                </div>
-            </article>
-
-        </div>
-
-        <aside>
-            <div class="sidebar-widget">
-                <h3 class="widget-title">About Me</h3>
-                <p class="about-text">I am a financial analyst dedicated to data-driven market research. I help investors see past the noise.</p>
-            </div>
-
-            <div class="sidebar-widget">
-                <h3 class="widget-title">Subscribe</h3>
-                <p class="about-text" style="margin-bottom:10px;">Get my latest findings in your inbox.</p>
-                <input type="email" class="subscribe-input" placeholder="Enter your email">
-                <button class="subscribe-btn">Join</button>
-            </div>
-        </aside>
-
+    <div class="blog-entry">
+        <span class="date">November 20, 2025</span>
+        <h2 class="blog-title"><a href="#">Tech Sector Volatility Review</a></h2>
+        <p class="summary">Looking back at the semiconductor dip and why value investors are buying in.</p>
+        <a href="#" class="read-btn">Read Full Article &rarr;</a>
     </div>
 
 </body>
